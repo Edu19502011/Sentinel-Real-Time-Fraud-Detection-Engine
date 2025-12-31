@@ -1,0 +1,49 @@
+{
+  "rules": [
+    {
+      "id": "velocity_check",
+      "name": "Transações Rápidas",
+      "description": "Detecta múltiplas transações em curto período",
+      "rule_type": "velocity_check",
+      "threshold": 3.0,
+      "risk_score": 0.8,
+      "action": "block"
+    },
+    {
+      "id": "amount_anomaly",
+      "name": "Valor Anômalo",
+      "description": "Transação com valor muito acima da média do usuário",
+      "rule_type": "amount_anomaly",
+      "threshold": 5.0,
+      "risk_score": 0.7,
+      "action": "review"
+    },
+    {
+      "id": "unknown_device",
+      "name": "Dispositivo Desconhecido",
+      "description": "Transação de dispositivo não reconhecido",
+      "rule_type": "unknown_device",
+      "threshold": 0.0,
+      "risk_score": 0.5,
+      "action": "review"
+    },
+    {
+      "id": "unknown_location",
+      "name": "Localização Desconhecida",
+      "description": "Transação de localização não usual",
+      "rule_type": "unknown_location",
+      "threshold": 0.0,
+      "risk_score": 0.4,
+      "action": "alert"
+    },
+    {
+      "id": "high_amount",
+      "name": "Valor Alto",
+      "description": "Transação acima de R$ 5000",
+      "rule_type": "high_amount",
+      "threshold": 5000.0,
+      "risk_score": 0.6,
+      "action": "review"
+    }
+  ]
+}
